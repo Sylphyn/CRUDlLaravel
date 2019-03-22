@@ -17,7 +17,7 @@ class CreateSinhviensTable extends Migration
             $table->Increments('id');
             $table->string('name');
             $table->integer('age');
-            $table->mediumText('avatar')->nullable();
+            $table->mediumText('avatar');
             $table->timestamps();
         });
     }

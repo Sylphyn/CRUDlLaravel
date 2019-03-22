@@ -19,7 +19,6 @@ class SVController extends Controller
 
     public function create()
     {
-
         return view('sinhvien.create');
     }
 
@@ -98,7 +97,7 @@ class SVController extends Controller
      */
     public function destroy($id)
     {
-        $sinhvien = sinhvien::findOrFair($id);
+        $sinhvien = sinhvien::find($id);
         $sinhvien->delete();
         return redirect('/sinhvien')->with('success', 'sinhvien deleted');
 

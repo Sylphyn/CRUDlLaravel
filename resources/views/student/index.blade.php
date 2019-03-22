@@ -16,25 +16,25 @@
         @endif
         <table class="table table-striped">
             <thead>
-            <tr>
+            <tr style="font-size:25px ; background-color:#81858f " >
                 <td>ID</td>
                 <td>Avatar</td>
                 <td>Name</td>
                 <td>Age</td>
-                <td>Edit</td>
-                <td colspan="2">Exit</td>
+                <td></td>
+                <td ></td>
             </tr>
             </thead>
             <tbody>
-            @foreach($sinhvien as $sinhvien)
-                <tr>
-                    <td>{{$sinhvien->id}}</td>
-                    <td><img src="{{$sinhvien->avatar}}"> </td>
-                    <td>{{$sinhvien->name}}</td>
-                    <td>{{$sinhvien->age}}</td>
-                    <td><a href="{{ route('sinhvien.edit',$sinhvien->id)}}" class="btn btn-primary">Edit</a></td>
-                    <td>
-                        <form action="{{ route('sinhvien.destroy', $sinhvien->id)}}" method="post">
+            @foreach($student as $student)
+                <tr style="font-size: 20px">
+                    <td>{{$student->id}}</td>
+                    <td><img src="image/{{$student->avatar}}"> </td>
+                    <td>{{$student->name}}</td>
+                    <td>{{$student->age}}</td>
+                    <td style="text-align: right"><a href="{{ route('student.edit',$student->id)}}" class="btn btn-primary">Edit</a></td>
+                    <td style="text-align: left">
+                        <form action="{{ route('student.destroy', $student->id)}}" method="post">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-danger" type="submit">Delete</button>
@@ -44,5 +44,6 @@
             @endforeach
             </tbody>
         </table>
+        <a style="font-size: large "   href="{{route('home')}}">Home</a>
         </div>
 @endsection

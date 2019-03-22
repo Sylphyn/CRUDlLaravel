@@ -15,4 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('sinhvien', 'SVController');
+Route::resource('student', 'StudentController')->middleware('auth');
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+
